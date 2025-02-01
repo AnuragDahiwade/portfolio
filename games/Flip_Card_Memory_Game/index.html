@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="Memory-game-main-container hide reset-size-main-container">
+        <div class="memory-game-wrapper" id="wrapper">
+            <div class="memory-card-game-levels">
+                <div class="beginner-button">
+                    <button class="beginner-btn" type="button" onclick="memoryCardBeginnerGame()">Beginner</button>
+                </div>
+                <div class="intermediate-button">
+                    <button class="intermediate-btn" type="button" onclick="memoryCardIntermediateGame()">Intermediate</button>
+                </div>
+                <div class="expert-button">
+                    <button class="expert-btn" type="button" onclick="memoryCardExpertGame()">Expert</button>
+                </div>
+            </div>
+            <!-- <header class="header">Card Matching Game</header> -->
+            <div class="header">
+                Card Matching Game
+            </div>
+            <div class="score-stats" id="score-stats">
+                <div class="moves hide" id="moves">
+                    Moves: 0
+                </div>
+                <div class="time" id="time">
+                    Time: 00:00
+                </div>
+                <div class="matches" id="matches">
+                    Matches: 0
+                </div>
+                <div class="gameScore">
+                    Score: 0
+                </div>
+            </div>
+            <div class="game-container" id="game-container">
+
+            </div>
+            <div class="start-stop">
+                
+                <div class="restart">
+
+                    <button type="button" class="restart hide" id="restart">Reset Game</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="startButton" id="startButton">
+        <div class="start" id="MainStartButton">
+            <button type="button" class="start" id="start">Start Game</button>
+        </div>
+    </div>
+
+    <p id="result"></p>
+    <div class="popup hidePopUp" id="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+          <div class="center-results">
+            <img width="100%" src="./imgs/trophy.png" alt="">
+            <h2 id="res-1">Score : </h2>
+          <h3 id="res-2">Moves : </h3>
+          <h3 id="res-3">time : </h3>
+          <button id="closeBtn" class="closeBtn" onclick="closePopup()">Close</button>
+          </div>
+    </div>
+    <div class="overlay hidePopUp" id="overlay"></div>
+   
+
+</body>
+<script src="./script.js"></script>
+
+</html>

@@ -1,0 +1,29 @@
+function setupGame(newWidth, newBombAmount, gridWidthPx, gridHeightPx) {
+    resetMinesweeper();
+    width = newWidth;
+    bombAmount = newBombAmount;
+
+    grid.style.setProperty("--minesweeper-size-width", gridWidthPx + "px");
+    grid.style.setProperty("--minesweeper-size-height", gridHeightPx + "px");
+    top.style.setProperty("--minesweeper-size", gridWidthPx + "px");
+    console.log("setupGame")
+    createBoard();
+  }
+
+  function startGame() {
+    setupGame(10, 8, 250, 250); //begineer
+  }
+
+  beginner.addEventListener('click', startGame)
+
+  intermediate.addEventListener('click', function () {
+    setupGame(13, 30, 325, 325); //intermediate
+  });
+
+  expert.addEventListener('click', function () {
+    if (screenWidth < 700) {
+      setupGame(20, 45, 274, 1000); //expert in mobile
+    } else {
+      setupGame(20, 45, 500, 500); //exert in desktop
+    }
+  });

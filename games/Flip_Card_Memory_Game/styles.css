@@ -1,0 +1,385 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+   background-color: #535756de;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 25px;
+  }
+  
+  .Memory-game-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+
+  }
+  .memory-game-wrapper {
+    min-width: var(--memoryGame-wrapper-size-width);
+    min-height: var(--memoryGame-wrapper-size-height);
+    background-color: #ffffff;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0.9em 2.8em rgba(0, 0, 0, 0.2);
+  }
+
+  .reset-size-main-container {
+    width: 0;
+    height: 0;
+  }
+
+  .memory-card-game-levels {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  }
+
+  .beginner-button .beginner-btn , .intermediate-button .intermediate-btn, .expert-button .expert-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .game-container {
+    
+    height: 325px;
+    width: 325px;
+    position: relative;
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+  .score-stats {
+    text-align: right;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  .stats-container {
+    text-align: left;
+    margin-bottom: 1.2em;
+  }
+  
+  .stars-res {
+    text-align: center;
+    margin-bottom: 1.2em;
+  }
+  
+  .stats-container span {
+    font-weight: 600;
+  }
+
+
+  .stars {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+  }
+  
+  .card-container {
+    position: relative;
+    width: 100%;
+    /* height: 5.45em; */
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #start,
+  #restart,
+  .new-game {
+    font-size: 1.1em;
+    margin: 1.1em auto 0 auto;
+    padding: 10px 22px;
+    cursor: pointer;
+    margin: 0.8rem auto;
+    border-radius: 20px;
+
+    background-color: #FFE566;
+     box-shadow: 0px 6px 0px #CCB029;
+     color: #000000;
+     border: none;
+     width: 150px;
+     border-radius: 20px;
+     padding: 0.7rem 0.5rem;
+     font-weight: 700;
+     font-size: 19px;
+  }
+  
+  #start {
+     background-color: #FFE566;
+     box-shadow: 0px 6px 0px #CCB029;
+     color: #000000;
+     border: none;
+     width: 200px;
+     border-radius: 20px;
+     padding: 0.7rem 0.5rem;
+     font-weight: 700;
+     font-size: 22px;
+     position: absolute;
+     transform: translate(-50%, -50%);
+     z-index: 1;
+  }
+
+
+  .startButton {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reduce-startButton-area {
+    width: 0;
+    height: 0;
+  }
+  
+  .start-stop {
+    margin: 0;
+  }
+  
+  .restart {
+    cursor: pointer;
+  }
+  
+  .card-before{
+    
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000000;
+    transition: transform 0.7s ease-out;
+    backface-visibility: hidden;
+ }
+  
+  .card-after {
+    
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000000;
+    transition: transform 0.7s ease-out;
+    backface-visibility: hidden;
+}
+  
+  .card-before {
+    background-color: #f4c531;
+    font-size: 2.8em;
+    font-weight: 600;
+  }
+  
+  .card-after {
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+  }
+
+  .card-after img {
+    width: 80%;
+  }
+  
+  .card-container.flipped .card-before {
+    transform: rotateY(180deg);
+  }
+  
+  .card-container.flipped .card-after {
+    transform: rotateY(0deg);
+  }
+  
+  .controls-container button {
+    font-size: 1.3em;
+    box-shadow: 0 0.6em 2em rgba(86, 66, 0, 0.2);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  #result {
+    text-align: center;
+  }
+  
+  #result h2 {
+    font-size: 2.5em;
+  }
+  
+  #result h4 {
+    font-size: 1.8em;
+    margin: 0.6em 0 1em 0;
+  }
+  
+   /* Styling for the popup container */
+   .popup {
+    /* display: none; Initially hide the popup */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    border-radius: 20px;
+    min-width: 300px;
+}
+/* Styling for the overlay */
+.overlay {
+    /* display: none; Initially hide the overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.hidePopUp {
+  display: none;
+}
+
+  .center-results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    max-width: 400px;
+    margin: 50% auto;
+    text-align: center;
+  }
+
+
+  img, svg {
+    vertical-align: middle;
+  }
+
+  .close {
+    color: #e27f7f;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    
+  }
+  
+  #closeBtn {
+    background-color: #ff6347;
+    min-width: 111px;
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 6%;
+}
+  #close:hover {
+    background-color: #e74c3c; /* Background color on hover */
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #e74c3c;
+    text-decoration: none;
+  }
+  
+
+  /* @media only screen and (min-width: 568px) and (max-width: 992px) {
+   
+    .memory-game-wrapper {
+      min-width: 560px;
+
+    }
+  
+    .popup-content {
+      max-width: 60%; 
+    }
+
+    .card-container {
+      min-width: 64px;
+      min-height: 74px; 
+    }
+
+  
+  } */
+
+/*
+  @media only screen and (max-width: 567px) {
+    .memory-game-wrapper {
+      min-width: 90%; 
+      
+    }
+  
+    .popup-content {
+      max-width: 90%; 
+    }
+
+    .card-container {
+      width: 100%;
+      min-height: 100px; 
+    }
+
+    .game-container {
+      min-width: 99%;
+      gap: 0.1em;
+    }
+
+    .card-before, .card-after {
+      aspect-ratio: 1/1;
+      min-width: 98%;
+    }
+  }
+  
+
+ 
+  */
